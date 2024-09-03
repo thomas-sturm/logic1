@@ -1,0 +1,30 @@
+package:
+  name: logic1
+  version: {{ GIT_DESCRIBE_TAG[1:] | replace("-", "_") }}
+
+source:
+  # Refer to parent directory, which is the root of the Git repository that
+  # contains logic1. Variables `GIT_*` are evaluated with respect to local
+  # working directory, usually the one in which you execute `conda build`.
+  git_url: ../
+
+build:
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
+
+requirements:
+  host:
+    - python >=3.11,<3.12
+    - pip
+  run:
+    - more-itertools
+    - pyeda
+    - sage
+    - typing-extensions
+
+about:
+  home: https://docs.logic1.eu/
+  license: GPL-2.0-or-later
+  license_family: GPL
+  summary: Interpreted first-order logic in python
