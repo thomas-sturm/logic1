@@ -1,0 +1,14 @@
+name: conda
+
+on:
+  push: { tags: [ 'v*.*.*' ] }
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          conda install conda-build
+          conda build conda
