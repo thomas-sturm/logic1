@@ -11,4 +11,5 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           conda install conda-build
+          conda config --add channels conda-forge
           conda build conda
