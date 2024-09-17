@@ -1,7 +1,7 @@
 name: conda
 
 on:
-  push: { tags: [ 'v*.*.*' ] }
+  push: { tags: [ 'v*.*.*' ], branches: [ 'tmp' ] }
   workflow_dispatch:
 
 jobs:
