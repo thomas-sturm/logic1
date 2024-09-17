@@ -26,3 +26,8 @@ classifiers = [
   "Programming Language :: Python :: 3.11",
   "Typing :: Typed"
 ]
+
+[tool.setuptools]
+packages = [
+  "logic1",
+]
